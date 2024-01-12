@@ -25,7 +25,7 @@ class FirebaseProjectManager
         $this->app = $app;
     }
 
-    public function project(string $name = null): FirebaseProject
+    public function project(?string $name = null): FirebaseProject
     {
         $name = $name ?? $this->getDefaultProject();
 
@@ -63,6 +63,10 @@ class FirebaseProjectManager
         $factory = new Factory();
 
         $config = $this->configuration($name);
+
+        $factory = $factory->withFirestoreDatabase(
+            $config['firestore']['database'] ?? '(default)'
+        );
 
         if ($tenantId = $config['auth']['tenant_id'] ?? null) {
             $factory = $factory->withTenantId($tenantId);
