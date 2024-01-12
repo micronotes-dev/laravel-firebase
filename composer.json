@@ -1,5 +1,5 @@
 {
-    "name": "kreait/laravel-firebase",
+    "name": "micronotes-dev/laravel-firebase",
     "description": "A Laravel package for the Firebase PHP Admin SDK",
     "keywords": ["laravel", "firebase", "firebase", "sdk", "api", "database", "fcm", "gcm"],
     "type": "library",
